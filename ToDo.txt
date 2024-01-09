@@ -1,0 +1,9 @@
+need to add:
+1- Users (login+show user)
+2- Carrito (Cart "where u add ur products including the table at the bbdd")
+3- # try comments #
+4- Do the design (Figma)
+5- Search Bar
+6- Filter
+
+https://vscode.dev/tunnel/desktop-q7jjh41/c:/xampp/htdocs/Clases_de_David/ManoShop

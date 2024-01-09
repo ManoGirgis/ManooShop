@@ -1,0 +1,29 @@
+#logo {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    width: 20;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-top: -15px;
+    margin-left: -20px;
+    display: inline-block;
+    float: left;
+}
+
+.table img {
+    top: 10px;
+    left: 20px;
+    width: 20;
+    height: 50px;
+}
+
+#picsart {
+    height: 500px;
+}
+
+#profile{
+    align-items: center;
+    display: flex;
+}
