@@ -4,7 +4,7 @@ if (isset($_SESSION["User"])) {
  $user = $_SESSION['User'];
 //var_dump($user);
 ?>
-
+<div class="content-wrapper">
 <div class="card card-primary card-outline">
 <div class="card-body box-profile">
 <div class="text-center">
@@ -24,7 +24,7 @@ if (isset($_SESSION["User"])) {
 </a>
 </div>
 
-</div>
+</div></div>
 <?php
 }
 else {include_once 'View/interface/login.php';}

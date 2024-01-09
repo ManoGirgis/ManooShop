@@ -1,5 +1,5 @@
 need to add:
-1- Users (login+show user)
+1- Users (login+show user)  need to make the (CREATE USER)
 2- Carrito (Cart "where u add ur products including the table at the bbdd")
 3- # try comments #
 4- Do the design (Figma)

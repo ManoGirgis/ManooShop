@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="css/articulostyle.css">
     </head>
 
-<body>
+<body class = "sidebar-mini" style="height: auto;">
+<div class = "wrapper">
     <nav class="navbar navbar-expand navbar-dark navbar-light">
 
         <ul class="navbar-nav">
@@ -24,9 +25,8 @@
                 <img src="img/logo.png" type="image/png" id="logo">
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-widget="pushmenu-control" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="?controller=Dashboard" class="nav-link">Admin mode</a>
             </li>
@@ -213,10 +213,22 @@
         </table>
     </aside>
 
-  
+    <!--aside class="main-sidebar sidebar-primary elevation-8">
+
+Hello <?php //$user->getFirstname() ?>
+
+<div class="sidebar">
+    hey
+<?php //include_once 'View/interface/showusr.php' ?>
+</div>
+       
+    <?php //include_once 'View/interface/showusr.php' ?>
+    </aside-->
+
 
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/adminlte.min.js?v=3.2.0"></script>
+    </div>
 </body>
 </html>

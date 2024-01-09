@@ -40,6 +40,22 @@ class userController
         //&action=editarticle&idarticulos=".$idarticulos
     }
 
+    public function Register()
+    {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $bday = $_POST['bday'];
+        $email = $_POST['email'];
+        $pswd = $_POST['password'];
+        $img = $_POST['usrpic'];
+
+        ArticuloDAO::edit($firstname, $lastname, $username, $bday, $email,$pswd,$img);
+
+        header("Location:" . url . "?controller=main&action=login");
+        //&action=editarticle&idarticulos=".$idarticulos
+    }
+
     public function delete()
     {
         $idarticulos = $_POST['idarticulos'];

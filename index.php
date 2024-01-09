@@ -8,6 +8,7 @@ include_once 'Controller/categoryController.php';
 include_once 'config/parameters.php';
 include_once 'Controller/userController.php';
 include_once 'Model/userDAO.php';
+include_once 'Controller/mainController.php';
 
 if (!isset($_GET['controller'])) {
     header("Location:".url."?controller=Articulo");
