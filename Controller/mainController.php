@@ -71,8 +71,8 @@ class DashboardController
 
     public function Login()
     {
-        $view = 'View/admin/users/login.php';
-        include_once 'View/admin/dashboard.php';
+        include_once 'View/interface/login.php';
+        include_once 'main.php';
     }
 
     /*public function addcategory(){

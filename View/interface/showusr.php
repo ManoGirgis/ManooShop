@@ -1,4 +1,7 @@
-<?php  $user = $_SESSION['User'];
+<?php 
+if (isset($_SESSION["User"])) {
+
+ $user = $_SESSION['User'];
 //var_dump($user);
 ?>
 
@@ -18,3 +21,7 @@
 <button type="button" class="btn btn-block btn-danger btn-lg">logout</button>
 </a>
 </div>
+<?php
+}
+else {include_once 'View/interface/login.php';}
+?>
