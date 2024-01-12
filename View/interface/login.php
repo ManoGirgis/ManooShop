@@ -15,8 +15,8 @@ if (!isset($_SESSION["User.name"])) {
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard v1</li>
+            <li class="breadcrumb-item"><a href="?controller=Dashoard">Home</a></li>
+            <li class="breadcrumb-item active">login</li>
           </ol>
         </div>
       </div>
@@ -28,7 +28,7 @@ if (!isset($_SESSION["User.name"])) {
 <div class="login-box">
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="?controller=Articulo" class="h1"><b>Man</b>Shop</a>
+        <a href="?controller=main&action=list" class="h1"><b>Man</b>Shop</a>
       </div>
       <div class="card-body">
         <p class="login-box-msg">Sign in to start your session</p>

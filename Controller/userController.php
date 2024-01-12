@@ -1,6 +1,6 @@
 <?php
 include_once 'Model/userDAO.php';
-session_start();
+
 class userController
 {
     public function loginbyMail()
@@ -13,7 +13,7 @@ class userController
             if($pswd == $user->getPassword())
             {
                 $_SESSION["User"] = $user;
-                header("Location:" . url . "?controller=Articulo");
+                header("Location:" . url . "?controller=main&action=list");
             }
             else
             {
@@ -25,7 +25,54 @@ class userController
        
     }  
 
-    public function edit()
+  
+
+    public function Register()
+    {
+        if($_POST['pswd'] == $_POST['repswd']){
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $bday = $_POST['bday'];
+        $email = $_POST['email'];
+        $pswd = $_POST['pswd'];
+     
+
+        userDAO::reg($firstname, $lastname, $username, $bday, $email,$pswd);
+
+        header("Location:" . url . "?controller=main&action=login");
+    } else {
+            header("Location:" . url . "?controller=main&action=register&error=1");
+        }
+        //&action=editarticle&idarticulos=".$idarticulos
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['User']);
+        unset($_SESSION['User.name']);
+       // session_destroy();        
+        header("Location:" . url . "?controller=main&action=list");
+    }
+
+    public function showuser()
+    {
+        include_once 'main.php';
+    include_once 'View/interface/showusr.php';
+    }
+
+
+
+    /* public function delete()
+    {
+        $idarticulos = $_POST['idarticulos'];
+
+
+        ArticuloDAO::delete($idarticulos);
+
+        header("Location:" . url . "?controller=Dashboard&action=list");
+    }*/
+     /* public function edit()
     {
         $idarticulos = $_POST['idarticulos'];
         $nombre = $_POST['nombre'];
@@ -38,43 +85,5 @@ class userController
 
         header("Location:" . url . "?controller=Dashboard");
         //&action=editarticle&idarticulos=".$idarticulos
-    }
-
-    public function Register()
-    {
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $username = $_POST['username'];
-        $bday = $_POST['bday'];
-        $email = $_POST['email'];
-        $pswd = $_POST['password'];
-        $img = $_POST['usrpic'];
-
-        ArticuloDAO::edit($firstname, $lastname, $username, $bday, $email,$pswd,$img);
-
-        header("Location:" . url . "?controller=main&action=login");
-        //&action=editarticle&idarticulos=".$idarticulos
-    }
-
-    public function delete()
-    {
-        $idarticulos = $_POST['idarticulos'];
-
-
-        ArticuloDAO::delete($idarticulos);
-
-        header("Location:" . url . "?controller=Dashboard&action=list");
-    }
-
-    public function logout()
-    {
-        session_destroy();        
-        header("Location:" . url . "?controller=Articulo");
-    }
-
-    public function showuser()
-    {
-        include_once 'main.php';
-    include_once 'View/interface/showusr.php';
-    }
+    }*/
 }

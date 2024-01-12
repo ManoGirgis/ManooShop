@@ -75,6 +75,18 @@ class DashboardController
         include_once 'View/admin/dashboard.php';
     }
 
+    public function regs()
+    {
+        $view = 'View/interface/crearusr.php';
+        include_once 'View/admin/dashboard.php';
+    }
+    
+    public function showusr()
+    {
+        $view = 'View/interface/showusr.php';
+        include_once 'View/admin/dashboard.php';
+    }
+
     /*public function addcategory(){
     $view = 'View/admin/categories/add.php';
     include_once 'View/admin/dashboard.php';

@@ -8,10 +8,12 @@ include_once 'Controller/categoryController.php';
 include_once 'config/parameters.php';
 include_once 'Controller/userController.php';
 include_once 'Model/userDAO.php';
+include_once 'Controller/compraController.php';
+include_once 'Model/compraDAO.php';
 include_once 'Controller/mainController.php';
 
 if (!isset($_GET['controller'])) {
-    header("Location:".url."?controller=Articulo");
+    header("Location:".url."?controller=main&action=list");
 } else {
   //echo $_GET['controller'];
   $nombre_controlador = $_GET['controller'] . 'Controller';
@@ -26,7 +28,8 @@ if (!isset($_GET['controller'])) {
     $controller->$action();
    // echo $action;
   } else {
-    header("Location:".url."?controller=Articulo");
+    $view = 'View/Articulos/articulos.php';
+    header("Location:".url."?controller=main");
   }
 }
 

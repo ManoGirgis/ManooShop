@@ -27,3 +27,10 @@
     align-items: center;
     display: flex;
 }
+
+#flexab
+{
+    justify-content: flex-start;
+    align-items: center
+
+}

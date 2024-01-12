@@ -42,7 +42,10 @@
                 <th><?= $category->getCatname() ?></th>
             </tr>
             <tr><img class="" id="picsart" src="<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
-
+            <tr><th><a class="btn btn-app bg-success" href="?controller=compra&action=buy&prod=<?= $articulo->getIdarticulos() ?>" name = "prod"> 
+<i class="fas fa-plus"></i>
+Comprar
+</a></th></tr>
         </table>
         </form>
     </section>

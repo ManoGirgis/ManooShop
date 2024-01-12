@@ -45,7 +45,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="?controller=Dashboard&action=regs" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>Crear Usuario</p>
                             </a>
@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="?controller=Articulo" class="nav-link">
+                            <a href="?controller=main&action=list" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>Modo Cliente</p>
                             </a>

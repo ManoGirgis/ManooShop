@@ -1,11 +1,11 @@
 <?php
 
 include_once 'config/database.php';
-include_once 'user.php';
+include_once 'Articulo.php';
 
-class userDAO
+class compraDAO
 {
-    public static function getUserbymail($email)
+    public static function getprodbyid($email)
     {
         $con = DataBase::connect();
         $stmt = $con->prepare("SELECT * FROM users WHERE email = ?"); // Password and Email or ID
@@ -25,7 +25,7 @@ class userDAO
         $con->close();
     }
 
-   /* public static function edit($idarticulos, $nombre, $precio, $descripcion, $idcategoria, $img,)
+    public static function edit($idarticulos, $nombre, $precio, $descripcion, $idcategoria, $img,)
     {
         $con = Database::connect();
 
@@ -33,7 +33,8 @@ class userDAO
         $stmt->bind_param("sdsisi", $nombre, $precio, $descripcion, $idcategoria, $img, $idarticulos);
         $stmt->execute();
         $con->close();
-        /*UPDATE articulos SET nombre = ?, precio = ?, descripcion = ?, idcategory = ?, img = ? WHERE idarticulos = ?;
+        /*UPDATE articulos SET nombre = ?, precio = ?, descripcion = ?, idcategory = ?, img = ? WHERE idarticulos = ?;*/
+    }
 
     public static function getarticulo($id)
     {
@@ -52,5 +53,5 @@ class userDAO
         $stmt = $con->prepare("DELETE FROM articulos WHERE idarticulos = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
-    }*/
+    }
 }
