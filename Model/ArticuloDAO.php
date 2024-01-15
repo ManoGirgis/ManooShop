@@ -17,7 +17,6 @@ class ArticuloDAO{
          $listaarticulos[] = $articulo; 
         }
         return $listaarticulos;
-        $_SESSION["try"]=5;
     }
 
     public static function add($nombre, $precio, $descripcion ,$idcategoria, $img)

@@ -1,6 +1,6 @@
 <?php 
 
-class category{
+class compras{
     private $idcategory;
     private $catname;
     

@@ -1,7 +1,3 @@
-<?php session_start();?>
-    
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +22,7 @@
 
         <ul class="navbar-nav">
             <li class="nav-icon">
-                <img src="img/logo.png" type="image/png" id="logo">
+               <a href="?controller=main"> <img src="img/logo.png" type="image/png" id="logo"></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu-control" href="#" role="button"><i class="fas fa-bars"></i></a>

@@ -13,7 +13,13 @@ class userController
             if($pswd == $user->getPassword())
             {
                 $_SESSION["User"] = $user;
-                header("Location:" . url . "?controller=main&action=list");
+                if($user->getrole() == 1){
+                    header("Location:" . url . "?controller=Dashboard&action=list");
+                
+                }else{
+                    header("Location:" . url . "?controller=main&action=list");
+                }
+                
             }
             else
             {
@@ -51,7 +57,7 @@ class userController
     {
         unset($_SESSION['User']);
         unset($_SESSION['User.name']);
-       // session_destroy();        
+       // session_destroy();   
         header("Location:" . url . "?controller=main&action=list");
     }
 

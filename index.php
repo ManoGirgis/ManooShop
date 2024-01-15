@@ -1,5 +1,5 @@
 <?php
-
+//session_start();
 include_once 'Model/ArticuloDAO.php';
 include_once 'Controller/ArticuloController.php';
 include_once 'Controller/DashboardController.php';

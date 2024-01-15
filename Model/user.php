@@ -10,15 +10,14 @@ class user
     private $email;
     private $password;
     private $usrpic;
-
+    private $Rule;
     public function __construct()
     {
-        
     }
 
     /**
      * Get the value of idUsers
-     */ 
+     */
     public function getIdUsers()
     {
         return $this->idUsers;
@@ -28,7 +27,7 @@ class user
      * Set the value of idUsers
      *
      * @return  self
-     */ 
+     */
     public function setIdUsers($idUsers)
     {
         $this->idUsers = $idUsers;
@@ -38,7 +37,7 @@ class user
 
     /**
      * Get the value of firstname
-     */ 
+     */
     public function getFirstname()
     {
         return $this->firstname;
@@ -48,7 +47,7 @@ class user
      * Set the value of firstname
      *
      * @return  self
-     */ 
+     */
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
@@ -58,7 +57,7 @@ class user
 
     /**
      * Get the value of lastname
-     */ 
+     */
     public function getLastname()
     {
         return $this->lastname;
@@ -68,7 +67,7 @@ class user
      * Set the value of lastname
      *
      * @return  self
-     */ 
+     */
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
@@ -78,7 +77,7 @@ class user
 
     /**
      * Get the value of birthdate
-     */ 
+     */
     public function getBirthdate()
     {
         return $this->birthdate;
@@ -88,7 +87,7 @@ class user
      * Set the value of birthdate
      *
      * @return  self
-     */ 
+     */
     public function setBirthdate($birthdate)
     {
         $this->birthdate = $birthdate;
@@ -98,7 +97,7 @@ class user
 
     /**
      * Get the value of email
-     */ 
+     */
     public function getEmail()
     {
         return $this->email;
@@ -108,7 +107,7 @@ class user
      * Set the value of email
      *
      * @return  self
-     */ 
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -118,7 +117,7 @@ class user
 
     /**
      * Get the value of password
-     */ 
+     */
     public function getPassword()
     {
         return $this->password;
@@ -128,7 +127,7 @@ class user
      * Set the value of password
      *
      * @return  self
-     */ 
+     */
     public function setPassword($password)
     {
         $this->password = $password;
@@ -138,7 +137,7 @@ class user
 
     /**
      * Get the value of username
-     */ 
+     */
     public function getUsername()
     {
         return $this->username;
@@ -148,7 +147,7 @@ class user
      * Set the value of username
      *
      * @return  self
-     */ 
+     */
     public function setUsername($username)
     {
         $this->username = $username;
@@ -158,7 +157,7 @@ class user
 
     /**
      * Get the value of userpic
-     */ 
+     */
     public function getUserpic()
     {
         return $this->usrpic;
@@ -168,13 +167,31 @@ class user
      * Set the value of userpic
      *
      * @return  self
-     */ 
+     */
     public function setUserpic($userpic)
     {
         $this->usrpic = $userpic;
 
         return $this;
     }
+
+    /**
+     * Get the value of Rule
+     */
+    public function getRule()
+    {
+        return $this->Rule;
     }
 
+    /**
+     * Set the value of Rule
+     *
+     * @return  self
+     */
+    public function setRule($Rule)
+    {
+        $this->Rule = $Rule;
 
+        return $this;
+    }
+}

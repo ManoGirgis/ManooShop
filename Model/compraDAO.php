@@ -2,6 +2,8 @@
 
 include_once 'config/database.php';
 include_once 'Articulo.php';
+include_once 'compras.php';
+include_once 'user.php';
 
 class compraDAO
 {

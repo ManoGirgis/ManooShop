@@ -90,7 +90,7 @@ class mainController
     //****************Products**************** (carrito)
     public function showcarrito()
     {
-        $view = 'View/interface/carrito.php';
+        $view = 'View/compras/carrito.php';
         include_once 'main.php';
     }
 
