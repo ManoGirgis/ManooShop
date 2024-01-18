@@ -49,7 +49,7 @@ class ArticuloController
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $idcategoria = $_POST['idcategoria'];
-        $img = "img/" . $_POST['img'];
+        $img = "img/" . $_FILES['img'];
 
         ArticuloDAO::add($nombre, $precio, $descripcion, $idcategoria, $img);
 

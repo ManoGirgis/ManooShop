@@ -2,7 +2,7 @@
 include_once 'Model/ArticuloDAO.php';
 include_once 'Model/categoryDAO.php';
 include_once 'Model/userDAO.php';
-
+include_once 'Controller/compraController.php';
 class mainController
 {
     public function list()
@@ -11,6 +11,7 @@ class mainController
         // $category = categoryDAO::getcategory($_GET["idcat"]);
         $view = 'View/Articulos/articulos.php';
         include_once 'main.php';
+       // echo "Hola";
     }
 
    /* public function addarticle()

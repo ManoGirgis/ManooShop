@@ -13,7 +13,7 @@ class userController
             if($pswd == $user->getPassword())
             {
                 $_SESSION["User"] = $user;
-                if($user->getrole() == 1){
+                if($user->getRule() == 1){
                     header("Location:" . url . "?controller=Dashboard&action=list");
                 
                 }else{

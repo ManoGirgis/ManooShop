@@ -43,7 +43,7 @@
                     </th>
                 </tr>
                 <tr>
-                    <th> Enlace del foto:</th>
+                    <th> Foto:</th>
                     <!--th><input type="link" name="img" placeholder="put the link here" required /></th-->
                     <th><input type="file" name="img" /></th>
                 </tr>

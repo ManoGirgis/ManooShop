@@ -26,7 +26,7 @@ if (!isset($_GET['controller'])) {
     }
 
     $controller->$action();
-   // echo $action;
+    //echo $action;
   } else {
     $view = 'View/Articulos/articulos.php';
     header("Location:".url."?controller=main");

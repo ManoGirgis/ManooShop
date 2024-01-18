@@ -1,7 +1,3 @@
-<?php
-include_once 'main.php';
-?>
-
 <div class="container mt-3">
   <div class="row">
 

@@ -1,3 +1,5 @@
+<?php include_once 'Controller/compraController.php' ?>
+
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -42,10 +44,29 @@
                 <th><?= $category->getCatname() ?></th>
             </tr>
             <tr><img class="" id="picsart" src="<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
-            <tr><th><a class="btn btn-app bg-success" href="?controller=compra&action=buy&prod=<?= $articulo->getIdarticulos() ?>" name = "prod"> 
-<i class="fas fa-plus"></i>
-Comprar
-</a></th></tr>
+            <tr>
+                <th>
+                    <?php if (compraController::exista($articulo->getIdarticulos())) { ?>
+                        <a class="btn btn-app bg-success" href="?controller=main&action=showcarrito">
+                            <i class="fas fa-check"></i>
+                            Mostrar carrito
+                        </a>
+                </th>
+                <th>
+                <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
+                            <i class="fas fa-times"></i>
+                            
+                            Ya no quiero
+                        </a>
+                    <?php  } else { ?>
+
+                        <a class="btn btn-app bg-success" href="?controller=compra&action=buy&prod=<?= $articulo->getIdarticulos() ?>" name="prod">
+                            <i class="fas fa-plus"></i>
+                            Comprar
+                        </a>
+                    <?php } ?>
+                </th>
+            </tr>
         </table>
         </form>
     </section>

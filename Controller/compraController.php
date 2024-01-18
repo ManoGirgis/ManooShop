@@ -18,7 +18,7 @@ class compraController
 
         //var_dump($_SESSION["carrito"]);
         //var_dump($listarts);
-        header("Location:" . url . "?controller=main&action=showcarrito");
+        header("Location:" . $_SERVER['HTTP_REFERER']);
     }
 
     public function dontwant()
@@ -27,7 +27,22 @@ class compraController
         $listarts = ArticuloDAO::getarticulo($id);
         $index = array_search($listarts, $_SESSION["carrito"]);
         unset($_SESSION["carrito"][$index]);
-        header("Location:" . url . "?controller=main&action=showcarrito");
+        header("Location:" . $_SERVER['HTTP_REFERER']);
     
+    }
+
+    public static function exista($id)
+    {
+        $art = ArticuloDAO::getarticulo($id);
+        if(array_search($art,$_SESSION["carrito"]))
+        {
+            return true;
+        }else{return false;}
+
+    }
+
+    public static function numberss()
+    {
+        return count($_SESSION["carrito"]);
     }
 }
