@@ -15,9 +15,17 @@ class userController
                 $_SESSION["User"] = $user;
                 if($user->getRule() == 1){
                     header("Location:" . url . "?controller=Dashboard&action=list");
+                    if (!isset($_SESSION["carrito"])) {
+
+                        $_SESSION["carrito"] = [];
+                    }
                 
                 }else{
                     header("Location:" . url . "?controller=main&action=list");
+                    if (!isset($_SESSION["carrito"])) {
+
+                        $_SESSION["carrito"] = [];
+                    }
                 }
                 
             }

@@ -43,6 +43,14 @@ class compraController
 
     public static function numberss()
     {
-        return count($_SESSION["carrito"]);
+        if(isset($_SESSION["carrito"])){
+            return count($_SESSION["carrito"]);
+        }else{
+            return 0;
+        }
+           
+
+        
+        
     }
 }

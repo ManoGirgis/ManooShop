@@ -1,7 +1,7 @@
 <?php
 
 include_once 'config/database.php';
-include_once 'Model/Articulo.php';
+include_once 'Articulo.php';
 
 class ArticuloDAO{
     public static function getALLArticulos(){
