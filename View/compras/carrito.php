@@ -18,9 +18,9 @@ $List = array();
     </div>
 </div>
 <?php
-if ($_SESSION["carrito"] != NULL) {
+if ($_SESSION["carrito".$_SESSION["User.id"]] != NULL) {
     $total = 0;
-    $List = $_SESSION["carrito"];
+    $List = $_SESSION["carrito".$_SESSION["User.id"]];
 ?>
 
 

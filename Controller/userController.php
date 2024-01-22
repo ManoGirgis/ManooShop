@@ -10,21 +10,22 @@ class userController
         $user = userDAO::getUserbymail($email);
         if(isset($user)){
             $_SESSION["User.name"] = $user->getFirstname();
+            $_SESSION["User.id"] = $user->getIdUsers();
             if($pswd == $user->getPassword())
             {
                 $_SESSION["User"] = $user;
                 if($user->getRule() == 1){
                     header("Location:" . url . "?controller=Dashboard&action=list");
-                    if (!isset($_SESSION["carrito"])) {
+                    if (!isset($_SESSION["carrito".$_SESSION["User.id"]])) {
 
-                        $_SESSION["carrito"] = [];
+                        $_SESSION["carrito".$_SESSION["User.id"]] = [];
                     }
                 
                 }else{
                     header("Location:" . url . "?controller=main&action=list");
-                    if (!isset($_SESSION["carrito"])) {
+                    if (!isset($_SESSION["carrito".$_SESSION["User.id"]])) {
 
-                        $_SESSION["carrito"] = [];
+                        $_SESSION["carrito".$_SESSION["User.id"]] = [];
                     }
                 }
                 

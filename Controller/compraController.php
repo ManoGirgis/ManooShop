@@ -10,11 +10,11 @@ class compraController
         $id = $_GET["prod"];
         $listarts = ArticuloDAO::getarticulo($id);
 
-        if (!isset($_SESSION["carrito"])) {
+        if (!isset($_SESSION["carrito".$_SESSION["User.id"]])) {
 
-            $_SESSION["carrito"] = [];
+            $_SESSION["carrito".$_SESSION["User.id"]] = [];
         }
-        array_push($_SESSION["carrito"], $listarts);
+        array_push($_SESSION["carrito".$_SESSION["User.id"]], $listarts);
 
         //var_dump($_SESSION["carrito"]);
         //var_dump($listarts);
@@ -25,8 +25,8 @@ class compraController
     {
         $id = $_GET["prod"];
         $listarts = ArticuloDAO::getarticulo($id);
-        $index = array_search($listarts, $_SESSION["carrito"]);
-        unset($_SESSION["carrito"][$index]);
+        $index = array_search($listarts, $_SESSION["carrito".$_SESSION["User.id"]]);
+        unset($_SESSION["carrito".$_SESSION["User.id"]][$index]);
         header("Location:" . $_SERVER['HTTP_REFERER']);
     
     }
@@ -34,7 +34,7 @@ class compraController
     public static function exista($id)
     {
         $art = ArticuloDAO::getarticulo($id);
-        if(array_search($art,$_SESSION["carrito"]))
+        if(array_search($art,$_SESSION["carrito".$_SESSION["User.id"]]))
         {
             return true;
         }else{return false;}
@@ -43,8 +43,8 @@ class compraController
 
     public static function numberss()
     {
-        if(isset($_SESSION["carrito"])){
-            return count($_SESSION["carrito"]);
+        if(isset($_SESSION["carrito".$_SESSION["User.id"]])){
+            return count($_SESSION["carrito".$_SESSION["User.id"]]);
         }else{
             return 0;
         }
