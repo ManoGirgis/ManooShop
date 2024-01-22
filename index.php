@@ -25,7 +25,8 @@ if (!isset($_GET['controller'])) {
       $action = action_default;
     }
 
-    $controller->$action();
+    //$controller->$action();
+    mainController::list();
     //echo $action;
   } else {
     $view = 'View/Articulos/articulos.php';
