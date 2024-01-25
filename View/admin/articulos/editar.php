@@ -17,7 +17,7 @@
  
     <section class="content">
 
-    <form action="?controller=Articulo&action=edit" method="post">
+    <form action="?controller=Articulo&action=edit" method="post" enctype="multipart/form-data">
     <table>
                 <tr>
                     <th> ID Articulo:</th>
@@ -51,11 +51,11 @@
                     </th>
                 </tr>
                 <tr>
-                    <th> Enlace del foto:</th>
-                    <th><input type="link" name="img"  Value="<?= $articulo->getimg() ?>" required /></th>
+                    <th> la foto:</th>
+                    <th><input type="file" name="img"  Value="<?= $articulo->getimg() ?>" accept="image/*"required /></th>
                 </tr>
                 <tr><td><button type="submit"> Campiar</button></td></tr>
-                <tr><img class="" id="picsart" src="<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
+                <tr><img class="" id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
                
             </table>
         </form>

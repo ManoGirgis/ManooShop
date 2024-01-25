@@ -17,8 +17,13 @@ class ArticuloController
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $idcategoria = $_POST['idcategoria'];
-        $img = $_POST['img'];
+        // $img = $_POST['img'];
 
+        $targetDirectory = "img/";
+        $targetFile = $targetDirectory . basename($_FILES['img']['name']);
+       // echo $targetFile;
+        move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile);
+        $img = $_FILES["img"]["name"];
         ArticuloDAO::edit($idarticulos, $nombre, $precio, $descripcion, $idcategoria, $img);
 
         header("Location:" . url . "?controller=Dashboard");
@@ -40,7 +45,7 @@ class ArticuloController
         $articulo = ArticuloDAO::getarticulo($_GET["idarticulos"]);
         $category = categoryDAO::getcategory($_GET["idcat"]);
         include_once 'main.php';
-        include_once 'View/Articulos/show.php';
+        include_once 'View/Articulos/Show.php';
     }
 
     public function add()
@@ -49,11 +54,16 @@ class ArticuloController
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $idcategoria = $_POST['idcategoria'];
-        $img = "img/" . $_FILES['img'];
+        //$img = "img/" . $_FILES['img']['name'];
 
+        $targetDirectory = "img/";
+        $targetFile = $targetDirectory . basename($_FILES['img']['name']);
+        move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile);
+        // echo "The file " . htmlspecialchars(basename($_FILES["img"]["name"])) . " has been uploaded.";
+        // echo "File Destination: " . $targetFile;
+        $img = $_FILES["img"]["name"];
         ArticuloDAO::add($nombre, $precio, $descripcion, $idcategoria, $img);
 
         header("Location:" . url . "?controller=Dashboard");
-        //&action=addarticle
     }
 }

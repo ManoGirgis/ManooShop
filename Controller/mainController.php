@@ -5,7 +5,7 @@ include_once 'Model/userDAO.php';
 include_once 'Controller/compraController.php';
 class mainController
 {
-    public static function list()
+    public function list()
     {
         $listaarticulos = ArticuloDAO::getALLArticulos();
         // $category = categoryDAO::getcategory($_GET["idcat"]);

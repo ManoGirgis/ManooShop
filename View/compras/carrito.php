@@ -18,9 +18,9 @@ $List = array();
     </div>
 </div>
 <?php
-if ($_SESSION["carrito".$_SESSION["User.id"]] != NULL) {
+if (isset($_SESSION["carrito" . $_SESSION["User.id"]]) && $_SESSION["carrito" . $_SESSION["User.id"]] != NULL) {
     $total = 0;
-    $List = $_SESSION["carrito".$_SESSION["User.id"]];
+    $List = $_SESSION["carrito" . $_SESSION["User.id"]];
 ?>
 
 
@@ -44,7 +44,7 @@ if ($_SESSION["carrito".$_SESSION["User.id"]] != NULL) {
 
                 ?>
                     <tr>
-                        <td><img class="" id="pics" src="<?= $articulo->getImg() ?>" alt="Card image cap"></td>
+                        <td><img class="" id="pics" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></td>
                         <td><?= $articulo->getNombre() ?></td>
                         <td><?= $articulo->getDescripcion() ?></td>
                         <td><?= $articulo->getPrecio() ?></td>

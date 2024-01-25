@@ -46,7 +46,7 @@
                 <tr><td><button type="submit"> Si</button></td>
                 <!--td><button type="submit" Value = 0> No</button></td-->
             </tr>
-                <tr><img class="" id="picsart" src="<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
+                <tr><img class="" id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
                
             </table>
         </form>

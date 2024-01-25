@@ -5,6 +5,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+                    <button type="button" class="btn"> <a href="?controller=main&action=list">
+                            <i class="fas fa-arrow-left text-muted"></i></a>
+                    </button>
                     <h1 class="m-0">show articulo</h1>
                 </div>
                 <div class="col-sm-6">
@@ -43,28 +46,33 @@
                 <th>Categoria:</th>
                 <th><?= $category->getCatname() ?></th>
             </tr>
-            <tr><img class="" id="picsart" src="<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
+            <tr><img class="" id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
             <tr>
                 <th>
-                    <?php if (compraController::exista($articulo->getIdarticulos())) { ?>
+                    <?php
+                    if (compraController::exista($articulo->getIdarticulos())) { ?>
                         <a class="btn btn-app bg-success" href="?controller=main&action=showcarrito">
                             <i class="fas fa-check"></i>
                             Mostrar carrito
                         </a>
                 </th>
                 <th>
-                <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
-                            <i class="fas fa-times"></i>
-                            
-                            Ya no quiero
-                        </a>
-                    <?php  } else { ?>
+                    <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
+                        <i class="fas fa-times"></i>
 
-                        <a class="btn btn-app bg-success" href="?controller=compra&action=buy&prod=<?= $articulo->getIdarticulos() ?>" name="prod">
-                            <i class="fas fa-plus"></i>
-                            Comprar
-                        </a>
-                    <?php } ?>
+                        Ya no quiero
+                    </a>
+                <?php  } else { ?>
+
+                    <a class="btn btn-app bg-success" href="<?php if (isset($_SESSION['User'])) {
+                                                                echo "?controller=compra&action=buy&prod=" . $articulo->getIdarticulos();
+                                                            } else {
+                                                                echo "?controller=main&action=login";
+                                                            } ?>">
+                        <i class="fas fa-plus"></i>
+                        Comprar
+                    </a>
+                <?php } ?>
                 </th>
             </tr>
         </table>

@@ -33,7 +33,7 @@
             foreach ($listaarticulos as $articulo) {
             ?>
                 <tr>
-                    <td><img class="" id="pics" src="<?= $articulo->getImg() ?>" alt="Card image cap"></td>
+                    <td><img class="" id="pics" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></td>
                     <td><?= $articulo->getNombre() ?></td>
                     <td><?= $articulo->getDescripcion() ?></td>
                     <td><?= $articulo->getPrecio() ?></td>
