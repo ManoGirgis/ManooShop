@@ -6,7 +6,7 @@
     foreach ($listaarticulos as $articulo) {
     ?>
 
-      <div class="card" style="width: 18rem; height: 30rem">
+      <div class="card" style="width: 18rem; height: 30rem" id="articard">
         <img src="img/<?= $articulo->getImg() ?>" class="card-img-top" alt="..." id="prodfoto">
         <div class="card-body">
           <h5 class="card-title"><?= $articulo->getNombre() ?></h5>

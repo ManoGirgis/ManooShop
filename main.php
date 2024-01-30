@@ -18,6 +18,7 @@
 </head>
 
 <body class="sidebar-mini" style="height: auto;">
+
     <div class="wrapper">
         <nav class="navbar navbar-expand navbar-dark navbar-light">
 

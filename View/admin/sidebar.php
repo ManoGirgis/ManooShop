@@ -36,7 +36,7 @@
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     <?php
-                                    if (!isset($_SESSION["User.name"])) {
+                                    if (!isset($_SESSION["user"])) {
                                     ?>
                                         Log In
                                     <?php
