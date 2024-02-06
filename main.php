@@ -18,9 +18,8 @@
 </head>
 
 <body class="sidebar-mini" style="height: auto;">
-
     <div class="wrapper">
-        <nav class="navbar navbar-expand navbar-dark navbar-light">
+        <nav class="navbar navbar-expand navbar-dark navbar-light" id="mains">
 
             <ul class="navbar-nav">
                 <li class="nav-icon">
@@ -147,10 +146,13 @@
         <?php if (isset($view)) {
             include_once($view);
             // var_dump( $_SESSION["try"]);
-        }  ?>
+        }  
+       include_once 'View/interface/filterbar.php' 
+
+        ?>
 
 
-        <aside class="control-sidebar control-sidebar-dark">
+        <!--aside class="control-sidebar control-sidebar-dark">
             <table>
                 <th>Sort by</th>
                 <tr>

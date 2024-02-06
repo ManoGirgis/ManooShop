@@ -23,49 +23,111 @@
     height: 500px;
 }
 
-#profile{
+#profile {
     align-items: center;
     display: flex;
 }
 
-#flexab
-{
+#flexab {
     justify-content: flex-start;
     align-items: center
-
 }
 
 #totals {
     text-align-last: right;
-    background-color: #f5f5f5; 
-    padding: 10px; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    margin-bottom: 15px; 
-  }
-  
-  
-  #money {
-    width: 20%; 
-    border-collapse: collapse; 
-    margin-top: 10px; 
-  }
-  
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
 
- #money td.total, table.money td.iva {
-    padding: 8px; 
-    text-align: right; 
-    font-weight: bold; 
-  }
 
-  body{
+#money {
+    width: 20%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+#money td.total,
+table.money td.iva {
+    padding: 8px;
+    text-align: right;
+    font-weight: bold;
+}
+
+body,
+#body {
     background-color: #09152B;
-  }
+    color: white;
+}
 
-  #articard{
+#articard {
     background-color: #082751;
     border-color: #ECF9FF;
-    outline-color:#ECF9FF ;
+    outline-color: #ECF9FF;
     color: #76D5FE;
-   border: 1px solid #ECF9FF
-  }
+    border: 1px solid #ECF9FF
+}
+
+#anouncios-pic {
+    height: 500px;
+    align-items: center;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    top: 0;
+    left: -250px;
+    /* Initially hide the sidebar off-screen */
+    background-color: #035CC2;
+    transition: left 0.3s ease;
+}
+
+#mainContent {
+    transition: margin-left 0.3s;
+}
+
+#demo {
+    background-color: rgba(236, 249, 255, 0.5);
+    ;
+}
+
+.mt-3 {
+
+    margin-bottom: 1rem;
+}
+
+#mains {
+    background-color: #035CC2;
+}
+
+a {
+    color: #0286DF;
+}
+
+p,
+#text,
+h1 {
+    color: #ECF9FF;
+}
+
+#logoside {
+    background-color: #063977;
+}
+
+#secondhead {
+    background-color: #063977;
+}
+
+thead {
+    background-color: #063977;
+    outline-color: #0286DF;
+    color: #B1E7FF;
+}
+
+tbody {
+    background-color: #082751;
+}

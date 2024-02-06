@@ -64,11 +64,9 @@
                     </a>
                 <?php  } else { ?>
 
-                    <a class="btn btn-app bg-success" href="<?php if (isset($_SESSION['User'])) {
+                    <a class="btn btn-app bg-success" href="<?php 
                                                                 echo "?controller=compra&action=buy&prod=" . $articulo->getIdarticulos();
-                                                            } else {
-                                                                echo "?controller=main&action=login";
-                                                            } ?>">
+                                                             ?>">
                         <i class="fas fa-plus"></i>
                         Comprar
                     </a>

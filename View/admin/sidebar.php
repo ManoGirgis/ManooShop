@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar elevation-4" id ="logoside">
     <!-- Brand Logo -->
-    <a href="?" class="brand-link">
-        <img src="img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="?controller=Dashboard" class="brand-link">
+        <img src="img/logo.png" alt="ManoShop Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <b>Mano</b><span class="brand-text font-weight-light">Shop</span>
     </a>
 
@@ -36,7 +36,7 @@
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     <?php
-                                    if (!isset($_SESSION["user"])) {
+                                    if (!isset($_SESSION["User"])) {
                                     ?>
                                         Log In
                                     <?php

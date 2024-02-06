@@ -7,7 +7,8 @@ class compraController
 {
     public function buy()
     {
-        $id = $_GET["prod"];
+        if(isset($_SESSION["User"])){
+            $id = $_GET["prod"];
         $listarts = ArticuloDAO::getarticulo($id);
 
         if (!isset($_SESSION["carrito" . $_SESSION["User.id"]])) {
@@ -19,6 +20,11 @@ class compraController
         //var_dump($_SESSION["carrito"]);
         //var_dump($listarts);
         header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
+        else {
+            header("Location:" .url. "?controller=main&action=login");
+        }
+        
     }
 
     public function dontwant()

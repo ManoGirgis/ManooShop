@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" id ="body">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -16,10 +16,10 @@
         </div>
     </div>
 
-    <section class="content">
+    <section class="content" >
 
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-bordered" >
+            <thead >
                 <tr>
                     <th>Img</th>
                     <th>Nombre</th>
