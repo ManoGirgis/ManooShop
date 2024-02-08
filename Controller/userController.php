@@ -15,13 +15,13 @@ class userController
             if (password_verify($pswd, $user->getPassword())) {
                 $_SESSION["User"] = $user;
                 if ($user->getRule() == 1) {
-                    header("Location:" . $_SERVER['HTTP_REFERER'] );
+                    header("Location:" . url . "?controller=Dashboard" );
                     if (!isset($_SESSION["carrito" . $_SESSION["User.id"]])) {
 
                         $_SESSION["carrito" . $_SESSION["User.id"]] = [];
                     }
                 } else {
-                    header("Location:" .  $_SERVER['HTTP_REFERER'] );
+                    header("Location:" .  url . "?controller=main" );
                     if (!isset($_SESSION["carrito" . $_SESSION["User.id"]])) {
 
                         $_SESSION["carrito" . $_SESSION["User.id"]] = [];

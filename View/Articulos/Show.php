@@ -1,6 +1,6 @@
 <?php include_once 'Controller/compraController.php' ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" id="body">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -48,30 +48,31 @@
             </tr>
             <tr><img class="" id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
             <tr>
-                <th>
-                    <?php
-                    if (compraController::exista($articulo->getIdarticulos())) { ?>
-                        <a class="btn btn-app bg-success" href="?controller=main&action=showcarrito">
+
+                <?php
+                if (compraController::exista($articulo->getIdarticulos())) { ?>
+                    <th> <a class="btn btn-app bg-success" href="?controller=main&action=showcarrito">
                             <i class="fas fa-check"></i>
                             Mostrar carrito
                         </a>
-                </th>
-                <th>
-                    <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
-                        <i class="fas fa-times"></i>
+                    </th>
+                    <th>
+                        <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
+                            <i class="fas fa-times"></i>
 
-                        Ya no quiero
-                    </a>
+                            Ya no quiero
+                        </a>
+                    </th>
                 <?php  } else { ?>
-
-                    <a class="btn btn-app bg-success" href="<?php 
+                    <th>
+                        <a class="btn btn-app bg-success" href="<?php
                                                                 echo "?controller=compra&action=buy&prod=" . $articulo->getIdarticulos();
-                                                             ?>">
-                        <i class="fas fa-plus"></i>
-                        Comprar
-                    </a>
-                <?php } ?>
-                </th>
+                                                                ?>">
+                            <i class="fas fa-plus"></i>
+                            Comprar
+                        </a>
+                    <?php } ?>
+                    </th>
             </tr>
         </table>
         </form>

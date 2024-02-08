@@ -8,7 +8,7 @@
                 <div class="col-sm-6">
                     <a href="?controller=Dashboard&action=addarticle">Añadir Artículo</a>
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="?controller=main">Home</a></li>
                         <li class="breadcrumb-item active">Dashboard v1</li>
                     </ol>
                 </div>
@@ -19,7 +19,7 @@
     <section class="content" >
 
         <table class="table table-bordered" >
-            <thead >
+            <thead>
                 <tr>
                     <th>Img</th>
                     <th>Nombre</th>

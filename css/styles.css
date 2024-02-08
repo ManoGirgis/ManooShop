@@ -33,19 +33,30 @@
     align-items: center
 }
 
+.contents{
+    margin-left: 5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.tablero img {
+
+    height: 50px;
+}
+
+.tablero {
+    width: 70%;
+    border-color: #ECF9FF;
+}
+
 #totals {
-    text-align-last: right;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    width: 20%;
 }
 
 
 #money {
-    width: 20%;
-    border-collapse: collapse;
+    text-align-last: right;
+    background-color: #063977;
     margin-top: 10px;
 }
 
@@ -92,7 +103,6 @@ body,
 
 #demo {
     background-color: rgba(236, 249, 255, 0.5);
-    ;
 }
 
 .mt-3 {
@@ -122,12 +132,43 @@ h1 {
     background-color: #063977;
 }
 
+
 thead {
     background-color: #063977;
-    outline-color: #0286DF;
     color: #B1E7FF;
 }
 
-tbody {
-    background-color: #082751;
+tbody tr {
+    border-bottom: 1px solid #063977;
+}
+
+
+td {
+    padding: 10px;
+}
+
+/* Styling the links within table cells */
+td a {
+    color: #B1E7FF;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+
+td a:hover {
+    color: #fff;
+}
+
+/* Add animation effects to the carousel items */
+.carousel-item {
+    transition: transform 0.6s ease;
+}
+
+/* Define the animation direction for the carousel items */
+.carousel-item.left {
+    transform: translateX(-100%);
+}
+
+.carousel-item.right {
+    transform: translateX(100%);
 }

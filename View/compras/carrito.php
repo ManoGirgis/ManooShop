@@ -2,6 +2,7 @@
 //include_once 'Model/Articulo.php';
 $List = array();
 ?>
+
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -9,14 +10,15 @@ $List = array();
                 <h1 class="m-0">Carrito</h1>
             </div>
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right" >
-                    <li class="breadcrumb-item"><a href="#" >Home</a></li>
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="?controller=main">Home</a></li>
                     <li class="breadcrumb-item active">carrito</li>
                 </ol>
             </div>
         </div>
     </div>
 </div>
+<div class="carrito-cesta">
 <?php
 if (isset($_SESSION["carrito" . $_SESSION["User.id"]]) && $_SESSION["carrito" . $_SESSION["User.id"]] != NULL) {
     $total = 0;
@@ -24,9 +26,9 @@ if (isset($_SESSION["carrito" . $_SESSION["User.id"]]) && $_SESSION["carrito" . 
 ?>
 
 
-    <section class="content">
+    <section class="contents" >
 
-        <table class="table table-bordered">
+        <table class="tablero">
             <thead>
                 <tr>
                     <th>Img</th>
@@ -97,4 +99,5 @@ if (isset($_SESSION["carrito" . $_SESSION["User.id"]]) && $_SESSION["carrito" . 
 } else {
 ?> <p> No hay ningun producto todavía <span><a href="?controller=main">Compra ahora</a></span></p>
 <?php
-}
+} ?>
+</div>

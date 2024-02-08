@@ -15,7 +15,7 @@ if (!isset($_SESSION["user"])) {
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="?controller=Dashoard">Home</a></li>
+            <li class="breadcrumb-item"><a href="?controller=main">Home</a></li>
             <li class="breadcrumb-item active">login</li>
           </ol>
         </div>
