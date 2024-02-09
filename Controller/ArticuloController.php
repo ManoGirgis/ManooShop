@@ -21,7 +21,7 @@ class ArticuloController
 
         $targetDirectory = "img/";
         $targetFile = $targetDirectory . basename($_FILES['img']['name']);
-       // echo $targetFile;
+        // echo $targetFile;
         move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile);
         $img = $_FILES["img"]["name"];
         ArticuloDAO::edit($idarticulos, $nombre, $precio, $descripcion, $idcategoria, $img);
@@ -65,5 +65,19 @@ class ArticuloController
         ArticuloDAO::add($nombre, $precio, $descripcion, $idcategoria, $img);
 
         header("Location:" . url . "?controller=Dashboard");
+    }
+
+    public static function search()
+    {
+        $search = $_POST['search'];
+        $listaarticulos = ArticuloDAO::search($search);
+        $view = 'View/Articulos/search.php';
+        include_once 'main.php';
+        //return $listaarticulos;
+    }
+
+    public function filter()
+    {
+        $filter = $_POST['filter'];
     }
 }

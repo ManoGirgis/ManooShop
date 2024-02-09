@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" id="body">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <section class="content">
+    <section class="content" >
 
         <form action="?controller=Articulo&action=add" method="post" enctype="multipart/form-data">
             <table>
@@ -48,7 +48,7 @@
                     <th><input type="file" accept="image/*" name="img" /></th>
                 </tr>
                 <tr>
-                    <td><button type="submit">Guardar</button></td>
+                    <td><button type="submit" id="special">Guardar</button></td>
                 </tr>
             </table>
         </form>

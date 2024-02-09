@@ -54,6 +54,22 @@ class ArticuloDAO{
         $stmt->execute();
         ;
     }
+
+public static function search($search){
+    $con = Database::connect();
+    $stmt = $con->prepare("SELECT * FROM articulos WHERE nombre LIKE ?");
+    $stmt->bind_param("s", $search);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $listaarticulos=[];
+
+    while($articulo = $result->fetch_object('Articulo')) {
+      $listaarticulos[] = $articulo;
+     }
+     return $listaarticulos;
+}
+
 }
 
 

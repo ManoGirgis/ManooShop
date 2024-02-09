@@ -2,6 +2,7 @@ need to finish:
  ## 1- Users (login+show user)  need to make the (CREATE USER)
  ## 2- Carrito (Cart "where u add ur products including the table at the bbdd")
 3- # try comments #
-4- Do the design (Figma)
-5- Search Bar
-6- Filter
+## 4- Do the design (Figma)
+## 5- Search Bar
+6- Filter 
+7- put what in main for with DAO inside its controller

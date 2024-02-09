@@ -1,10 +1,10 @@
 <div class="register-page" style="min-height: 542px;" id="flexab">
     <div class="register-box">
         <div class="card card-outline card-primary mt-3">
-            <div class="card-header text-center">
+            <div class="card-header text-center" id="articard">
                 <a href="?controller=main&action=list" class="h1"><b>Man</b>Shop</a>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="articard">
                 <p class="login-box-msg">Register a new membership</p>
                 <form action="?controller=user&action=Register" method="post"> <!-- Here goes the POST and the Action-->
                     <div class="input-group mb-3">

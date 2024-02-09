@@ -24,13 +24,13 @@ if (!isset($_SESSION["user"])) {
   </div>
 
   <body>
-    <div class="login-page" style="min-height: 466px;">
+    <div class="login-page" style="min-height: 466px;" id="body">
       <div class="login-box">
         <div class="card card-outline card-primary">
-          <div class="card-header text-center">
+          <div class="card-header text-center" id="articard">
             <a href="?controller=main&action=list" class="h1"><b>Man</b>Shop</a>
           </div>
-          <div class="card-body">
+          <div class="card-body" id="articard">
             <p class="login-box-msg">Sign in to start your session</p>
             <form action="?controller=user&action=loginbyMail" method="post">
               <div class="input-group mb-3">
@@ -85,26 +85,7 @@ if (!isset($_SESSION["user"])) {
         </div>
       </div>
     </div>
-    <!--
-      <form action="?controller=user&action=loginbyMail" method="post">
-        <div class="mb-3 mt-3">
-        Email:
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-        </div>
-        <div class="mb-3">
-          Password:
-          <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="pswd">
-        </div>
-        <div class="form-check mb-3">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="remember"> Remember me
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">login</button>
-      </form>
- 
-    -->
-  </body>
+   </body>
 <?php  } else {
   include_once 'View/interface/showusr.php';
 }

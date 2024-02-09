@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" id="body">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -15,7 +15,7 @@
         </div>
     </div>
  
-    <section class="content">
+    <section class="content" id="artedit">
 
     <form action="?controller=Articulo&action=delete" method="post">
     <table>

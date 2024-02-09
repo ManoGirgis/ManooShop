@@ -19,9 +19,7 @@
     height: 50px;
 }
 
-#picsart {
-    height: 500px;
-}
+
 
 #profile {
     align-items: center;
@@ -30,14 +28,16 @@
 
 #flexab {
     justify-content: flex-start;
-    align-items: center
+    align-items: center;
+    background-color: #09152B;
 }
 
-.contents{
+#contents{
     margin-left: 5rem;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 .tablero img {
 
@@ -55,6 +55,8 @@
 
 
 #money {
+    text-align: right;
+    -moz-text-align-last: right;
     text-align-last: right;
     background-color: #063977;
     margin-top: 10px;
@@ -69,10 +71,12 @@ table.money td.iva {
 }
 
 body,
-#body {
+#body,#offcanvasExample {
     background-color: #09152B;
     color: white;
 }
+
+
 
 #articard {
     background-color: #082751;
@@ -92,7 +96,6 @@ body,
     height: 100vh;
     top: 0;
     left: -250px;
-    /* Initially hide the sidebar off-screen */
     background-color: #035CC2;
     transition: left 0.3s ease;
 }
@@ -171,4 +174,47 @@ td a:hover {
 
 .carousel-item.right {
     transform: translateX(100%);
+}
+
+#artishow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#artishow table{
+    width: 20%;
+    padding-right: 5rem;
+}
+#artishow #img{
+   width: 60%;
+}
+
+#picsart {
+    height: 500px;
+    object-fit: contain;
+    width: 100%;
+}
+
+#btn-yes{
+    
+    background-color: #76D5FE;
+}
+
+svg {/* ICONS with SVG entity are all white */
+    fill: #ffffff
+}
+
+/*input[type="text"] ,input[type="number"],textarea,select, #special{
+    background-color: #B1E7FF;
+
+}*/
+#artedit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }

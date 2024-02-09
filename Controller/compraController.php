@@ -7,24 +7,22 @@ class compraController
 {
     public function buy()
     {
-        if(isset($_SESSION["User"])){
+        if (isset($_SESSION["User"])) {
             $id = $_GET["prod"];
-        $listarts = ArticuloDAO::getarticulo($id);
+            $listarts = ArticuloDAO::getarticulo($id);
 
-        if (!isset($_SESSION["carrito" . $_SESSION["User.id"]])) {
+            if (!isset($_SESSION["carrito" . $_SESSION["User.id"]])) {
 
-            $_SESSION["carrito" . $_SESSION["User.id"]] = [];
-        }
-        array_push($_SESSION["carrito" . $_SESSION["User.id"]], $listarts);
+                $_SESSION["carrito" . $_SESSION["User.id"]] = [];
+            }
+            array_push($_SESSION["carrito" . $_SESSION["User.id"]], $listarts);
 
-        //var_dump($_SESSION["carrito"]);
-        //var_dump($listarts);
-        header("Location:" . $_SERVER['HTTP_REFERER']);
+            //var_dump($_SESSION["carrito"]);
+            //var_dump($listarts);
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        } else {
+            header("Location:" . url . "?controller=main&action=login");
         }
-        else {
-            header("Location:" .url. "?controller=main&action=login");
-        }
-        
     }
 
     public function dontwant()
@@ -59,5 +57,14 @@ class compraController
         } else {
             return 0;
         }
+    }
+
+    public function buyall()
+    {
+        $preciototal = $_POST["precio"];
+        $fecha = date("Y-m-d");;
+        compraDAO::buyall($preciototal, $fecha, $_SESSION["User.id"], $_SESSION["carrito" . $_SESSION["User.id"]]);
+        unset($_SESSION["carrito" . $_SESSION["User.id"]]);
+        header("Location:" . url . "?controller=main");
     }
 }

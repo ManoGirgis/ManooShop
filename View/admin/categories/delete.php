@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" id="body">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -29,7 +29,7 @@
                 <!--tr><td></td><td><button type="submit">Buscar</button></td></tr-->
                 <tr>
                     <th> nombre categoria: </th>
-                    <th><input type="text" name="catname" Value="<?= $category->getCatname() ?>" required /></th>
+                    <th> <?= $category->getCatname() ?> </th>
                 </tr>
                 <tr>
                 </tr>

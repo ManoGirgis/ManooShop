@@ -25,9 +25,9 @@
                 <li class="nav-icon">
                     <a href="?controller=main"> <img src="img/logo.png" type="image/png" id="logo"></a>
                 </li>
-                <li class="nav-item">
+                <!--li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu-control" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
+                </li-->
                 <?php
                 if (isset($_SESSION["User"])) {
                     if ($_SESSION["User"]->getRule() == 1) { ?>
@@ -54,14 +54,14 @@
                         <i class="fas fa-search"></i>
                     </a>
                     <div class="navbar-search-block" id="navbar-search4">
-                        <form class="form-inline">
+                        <form class="form-inline" method="post" action="?controller=main&action=search">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control form-control-navbar" name="search" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search" >
                                         <i class="fas fa-times"></i>
                                     </button>
                                 </div>
@@ -115,7 +115,7 @@
                 <?php } else { ?>
                     <li class="nav-item d-none d-sm-inline-block">
                         <a href="?controller=main&action=login" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
                                 <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                             </svg>
                         </a>
@@ -126,136 +126,27 @@
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
             </li-->
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <style>
-                                svg {
-                                    fill: #ffffff
-                                }
-                            </style>
-                            <path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z" />
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+            
+                <?php if ($_GET["action"] == NULL || $_GET["action"] == "list") { ?>
 
+                    <li class="nav-item">
+                        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                <path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z" />
+                            </svg>
+                        </a>
+                    </li>
+            </ul>
+        <?php } ?>
         </nav>
+
+        <?php include_once 'View/interface/filterbar.php'; ?>
 
 
         <?php if (isset($view)) {
             include_once($view);
             // var_dump( $_SESSION["try"]);
-        }  
-       include_once 'View/interface/filterbar.php' 
-
-        ?>
-
-
-        <!--aside class="control-sidebar control-sidebar-dark">
-            <table>
-                <th>Sort by</th>
-                <tr>
-                    <td>
-                        <input type="radio" name="sort">
-                    </td>
-                    <td>
-                        Most Recent
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="sort">
-                    </td>
-                    <td>
-                        Most Bought
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="sort">
-                    </td>
-                    <td>
-                        Most Reviews
-                    </td>
-                </tr>
-            </table>
-            <table>
-                <th>Filter by</th>
-                <tr>
-                    <td>Category: </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                        PVP
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                        Action
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                        Arcade
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                        Adventure
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                        Sports
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                        Survival
-                    </td>
-                </tr>
-
-            </table>
-        </aside>
-
-        <!--aside class="main-sidebar sidebar-primary elevation-8">
-
-Hello <?php //$user->getFirstname() 
-        ?>
-
-<div class="sidebar">
-    hey
-<?php //include_once 'View/interface/showusr.php' 
-?>
-</div>
-       
-    <?php //include_once 'View/interface/showusr.php' 
-    ?>
-    </aside-->
-
+        }        ?>
 
         <script src="plugins/jquery/jquery.min.js"></script>
         <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -1,18 +1,18 @@
 <?php include_once 'Controller/compraController.php' ?>
 
-<div class="content-wrapper" id="body">
+<div class="content" id="body">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <button type="button" class="btn"> <a href="?controller=main&action=list">
-                            <i class="fas fa-arrow-left text-muted"></i></a>
-                    </button>
+                   <a href="?controller=main"> <button type="button" class="btn"> 
+                            <i class="fas fa-arrow-left text-muted"></i>
+                    </button></a>
                     <h1 class="m-0">show articulo</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="?controller=main">Home</a></li>
                         <li class="breadcrumb-item active">User</li>
                     </ol>
                 </div>
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <section class="content">
+    <section class="content" id="artishow">
         <table>
             <tr>
                 <th> ID Articulo:</th>
@@ -46,8 +46,8 @@
                 <th>Categoria:</th>
                 <th><?= $category->getCatname() ?></th>
             </tr>
-            <tr><img class="" id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
-            <tr>
+            <tr><div id="img"><img id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
+            </div><tr>
 
                 <?php
                 if (compraController::exista($articulo->getIdarticulos())) { ?>

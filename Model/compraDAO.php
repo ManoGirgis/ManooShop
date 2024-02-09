@@ -7,7 +7,7 @@ include_once 'user.php';
 
 class compraDAO
 {
-    public static function getprodbyid($email)
+   /* public static function getprodbyid($email)
     {
         $con = DataBase::connect();
         $stmt = $con->prepare("SELECT * FROM users WHERE email = ?"); // Password and Email or ID
@@ -15,19 +15,27 @@ class compraDAO
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_object('user');
-    }
+    }*/
 
 
-    public static function reg($firstname, $lastname, $username, $bday, $email,$pswd)
+    public static function buyall($preciototal, $fecha, $iduser,$prods)
     {
         $con = Database::connect();
-        $stmt = $con->prepare("INSERT INTO users (firstname, lastname, username, birthdate, email, password) VALUES (?,?,?,?,?,?)");
-        $stmt->bind_param("ssssss", $firstname, $lastname, $username, $bday, $email,$pswd);
+        $stmt = $con->prepare("INSERT INTO compras ( preciototal, fecha, iduser) VALUES (?,?,?)");
+        $stmt->bind_param("dsi", $preciototal, $fecha, $iduser);
         $stmt->execute();
+        $idCompra = $stmt->insert_id;
+        foreach ($prods as $prod) {
+            $stmt = $con->prepare("INSERT INTO compras_articulos (compras_idcompras, articulos_idarticulos, precio) VALUES (?, ?, ?)");
+            $stmt->bind_param("iid", $idCompra, $prod->getIdarticulos(), $prod->getPrecio());
+            $stmt->execute();
+            $stmt->close();
+        }
         $con->close();
+
     }
 
-    public static function edit($idarticulos, $nombre, $precio, $descripcion, $idcategoria, $img,)
+   /* public static function edit($idarticulos, $nombre, $precio, $descripcion, $idcategoria, $img,)
     {
         $con = Database::connect();
 
@@ -35,7 +43,7 @@ class compraDAO
         $stmt->bind_param("sdsisi", $nombre, $precio, $descripcion, $idcategoria, $img, $idarticulos);
         $stmt->execute();
         $con->close();
-        /*UPDATE articulos SET nombre = ?, precio = ?, descripcion = ?, idcategory = ?, img = ? WHERE idarticulos = ?;*/
+        
     }
 
     public static function getarticulo($id)
@@ -55,5 +63,5 @@ class compraDAO
         $stmt = $con->prepare("DELETE FROM articulos WHERE idarticulos = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
-    }
+    }*/
 }

@@ -11,33 +11,15 @@ class mainController
         // $category = categoryDAO::getcategory($_GET["idcat"]);
         $view = 'View/Articulos/articulos.php';
         include_once 'main.php';
-       // echo "Hola";
+        // echo "Hola";
     }
 
-   /* public function addarticle()
+    public function search()
     {
-        $listacategory = categoryDAO::getALLcategory();
-        //    $listacategory = categoryDAO::getALLcategory();
-
-        $view = 'View/admin/articulos/add.php';
+        $listaarticulos = ArticuloController::search();
+        $view = 'View/Articulos/search.php';
         include_once 'main.php';
     }
-
-   public function editarticle()
-    {
-        $articulo = ArticuloDAO::getarticulo($_GET["idarticulos"]);
-        $listacategory = categoryDAO::getALLcategory();
-        $view = 'View/admin/articulos/editar.php';
-        include_once 'main.php';
-    }
-
-    public function deletearticle()
-    {
-        $category = categoryDAO::getcategory($_GET["idcat"]);
-        $articulo = ArticuloDAO::getarticulo($_GET["idarticulos"]);
-        $view = 'View/admin/articulos/delete.php';
-        include_once 'main.php';
-    }*/
 
     // ************* Categories ****************
 
@@ -47,7 +29,7 @@ class mainController
         $view = 'View/Category/catlist.php';
         include_once 'main.php';
     }
-/*
+    /*
     public function addcategory()
     {
         $view = 'View/admin/categories/add.php';
@@ -77,10 +59,10 @@ class mainController
     }
 
     public function register()
-    
-    { 
+
+    {
         $view = 'View/interface/crearusr.php';
-       include_once 'main.php';
+        include_once 'main.php';
     }
 
     public function showusr()
@@ -94,5 +76,4 @@ class mainController
         $view = 'View/compras/carrito.php';
         include_once 'main.php';
     }
-
 }
