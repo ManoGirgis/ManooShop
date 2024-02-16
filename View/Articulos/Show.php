@@ -5,9 +5,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                   <a href="?controller=main"> <button type="button" class="btn"> 
+                    <a href="?controller=main"> <button type="button" class="btn">
                             <i class="fas fa-arrow-left text-muted"></i>
-                    </button></a>
+                        </button></a>
                     <h1 class="m-0">show articulo</h1>
                 </div>
                 <div class="col-sm-6">
@@ -46,35 +46,69 @@
                 <th>Categoria:</th>
                 <th><?= $category->getCatname() ?></th>
             </tr>
-            <tr><div id="img"><img id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></tr>
-            </div><tr>
-
-                <?php
-                if (compraController::exista($articulo->getIdarticulos())) { ?>
-                    <th> <a class="btn btn-app bg-success" href="?controller=main&action=showcarrito">
-                            <i class="fas fa-check"></i>
-                            Mostrar carrito
-                        </a>
-                    </th>
-                    <th>
-                        <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
-                            <i class="fas fa-times"></i>
-
-                            Ya no quiero
-                        </a>
-                    </th>
-                <?php  } else { ?>
-                    <th>
-                        <a class="btn btn-app bg-success" href="<?php
-                                                                echo "?controller=compra&action=buy&prod=" . $articulo->getIdarticulos();
-                                                                ?>">
-                            <i class="fas fa-plus"></i>
-                            Comprar
-                        </a>
-                    <?php } ?>
-                    </th>
+            <tr>
+                <div id="img"><img id="picsart" src="img/<?= $articulo->getImg() ?>" alt="Card image cap">
             </tr>
-        </table>
-        </form>
-    </section>
 </div>
+<tr>
+
+    <?php
+    if (compraController::exista($articulo->getIdarticulos())) { ?>
+        <th> <a class="btn btn-app bg-success" href="?controller=main&action=showcarrito">
+                <i class="fas fa-check"></i>
+                Mostrar carrito
+            </a>
+        </th>
+        <th>
+            <a class="btn btn-app bg-danger" href="?controller=compra&action=dontwant&prod=<?= $articulo->getIdarticulos() ?>">
+                <i class="fas fa-times"></i>
+
+                Ya no quiero
+            </a>
+        </th>
+    <?php  } else { ?>
+        <th>
+            <a class="btn btn-app bg-success" href="<?php
+                                                    echo "?controller=compra&action=buy&prod=" . $articulo->getIdarticulos();
+                                                    ?>">
+                <i class="fas fa-plus"></i>
+                Comprar
+            </a>
+        <?php } ?>
+        </th>
+</tr>
+</table>
+</form>
+<!--div class="card-footer card-comments" id="commentCard">
+    <div class="card-comment">
+
+        <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image">
+        <div class="comment-text">
+            <span class="username">
+                Maria Gonzales
+                <span class="text-muted float-right">8:03 PM Today</span>
+            </span>
+            It is a long established fact that a reader will be distracted
+            by the readable content of a page when looking at its layout.
+        </div>
+
+    </div>
+
+    <div class="card-comment">
+
+        <img class="img-circle img-sm" src="../dist/img/user5-128x128.jpg" alt="User Image">
+        <div class="comment-text">
+            <span class="username">
+                Nora Havisham
+                <span class="text-muted float-right">8:03 PM Today</span>
+            </span>
+            The point of using Lorem Ipsum is that it hrs a morer-less
+            normal distribution of letters, as opposed to using
+            'Content here, content here', making it look like readable English.
+        </div>
+
+    </div>
+
+</div>
+</section>
+</div--->

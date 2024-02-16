@@ -36,7 +36,14 @@
         <img src="img/<?= $articulo->getImg() ?>" class="card-img-top mt-3" alt="..." id="prodfoto">
         <div class="card-body">
           <h5 class="card-title"><b><?= $articulo->getNombre() ?></b></h5>
-          <p class="card-text">Categoria numero: <?= $articulo->getIdcatergoria() ?></p>
+          <p class="card-text">Categoria: 
+            <?php 
+          foreach($listacategory as $cat){
+            if($cat->getIdcategory() == $articulo->getIdcatergoria()){
+              echo $cat->getCatname();
+            }
+          }
+          ?></p>
           <p class="card-text">Descripcion: <br><?= $articulo->getDescripcion() ?></p>
           <p class="card-text">Precio: <?= $articulo->getPrecio() ?> Euro</p>
           <a class="btn btn-app bg-primary" href="?controller=Articulo&action=masinfo&idarticulos=<?= $articulo->getIdarticulos() ?>&idcat=<?= $articulo->getIdcatergoria() ?>">

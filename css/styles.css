@@ -219,3 +219,8 @@ svg {/* ICONS with SVG entity are all white */
     align-items: flex-start;
 }
 
+#commentCard {
+    background-color: #082751;
+    color: #76D5FE;
+    border: 0px solid #ECF9FF
+}

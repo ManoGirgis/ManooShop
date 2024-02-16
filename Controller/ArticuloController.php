@@ -1,11 +1,13 @@
 <?php
 include_once 'Model/ArticuloDAO.php';
 include_once 'categoryController.php';
+include_once 'Model/commentDAO.php';
 class ArticuloController
 {
     public static function list()
     {
         $listaarticulos = ArticuloDAO::getALLArticulos();
+       // $listacategory = categoryDAO::getALLCategory();
         return  $listaarticulos;
         //  include_once 'View//Articulos/articulos.php';
 
@@ -45,6 +47,7 @@ class ArticuloController
     {
         $articulo = ArticuloDAO::getarticulo($_GET["idarticulos"]);
         $category = categoryDAO::getcategory($_GET["idcat"]);
+        $listacomments = commentDAO::getcomments($_GET["idarticulos"]);
         include_once 'main.php';
         include_once 'View/Articulos/Show.php';
     }
@@ -72,7 +75,7 @@ class ArticuloController
     {
         $search = $_POST['search'];
         $listaarticulos = ArticuloDAO::search($search);
-       //$view = 'View/Articulos/articulos.php';
+        //$view = 'View/Articulos/articulos.php';
         //include_once 'main.php';
         return $listaarticulos;
     }
