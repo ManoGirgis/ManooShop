@@ -5,4 +5,4 @@ need to finish:
 ## 4- Do the design (Figma)
 ## 5- Search Bar
 6- Filter 
-7- put what in main for with DAO inside its controller
+7-## put what in main for with DAO inside its controller

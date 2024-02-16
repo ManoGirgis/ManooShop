@@ -45,7 +45,9 @@
                 <tr>
                     <th> Foto:</th>
                     <!--th><input type="link" name="img" placeholder="put the link here" required /></th-->
-                    <th><input type="file" accept="image/*" name="img" /></th>
+                    <th>
+                        
+                    <input type="file" accept="image/*" name="img" /></th>
                 </tr>
                 <tr>
                     <td><button type="submit" id="special">Guardar</button></td>

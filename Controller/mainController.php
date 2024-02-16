@@ -1,13 +1,14 @@
 <?php
-include_once 'Model/ArticuloDAO.php';
-include_once 'Model/categoryDAO.php';
+include_once 'ArtitculoController.php';
+include_once 'categoryController.php';
 include_once 'Model/userDAO.php';
 include_once 'Controller/compraController.php';
 class mainController
 {
     public function list()
     {
-        $listaarticulos = ArticuloDAO::getALLArticulos();
+        $listaarticulos = ArticuloController::list();
+        $listacategory = categoryDAO::getALLcategory();
         // $category = categoryDAO::getcategory($_GET["idcat"]);
         $view = 'View/Articulos/articulos.php';
         include_once 'main.php';
@@ -17,10 +18,17 @@ class mainController
     public function search()
     {
         $listaarticulos = ArticuloController::search();
+        $listacategory = categoryDAO::getALLcategory();
         $view = 'View/Articulos/search.php';
         include_once 'main.php';
     }
-
+    public function filter()
+    {
+        $listaarticulos = ArticuloController::filter();
+        $listacategory = categoryDAO::getALLcategory();
+        $view = 'View/Articulos/search.php';
+        include_once 'main.php';
+    }
     // ************* Categories ****************
 
     public function listcat()

@@ -1,13 +1,14 @@
 <?php
 include_once 'Model/ArticuloDAO.php';
+include_once 'categoryController.php';
 class ArticuloController
 {
-    public function list()
+    public static function list()
     {
         $listaarticulos = ArticuloDAO::getALLArticulos();
-        //include_once 'View/header.php';
-        include_once 'View//Articulos/articulos.php';
-        //include_once 'View/footer.php';
+        return  $listaarticulos;
+        //  include_once 'View//Articulos/articulos.php';
+
     }
 
     public function edit()
@@ -71,13 +72,17 @@ class ArticuloController
     {
         $search = $_POST['search'];
         $listaarticulos = ArticuloDAO::search($search);
-        $view = 'View/Articulos/search.php';
-        include_once 'main.php';
-        //return $listaarticulos;
+       //$view = 'View/Articulos/articulos.php';
+        //include_once 'main.php';
+        return $listaarticulos;
     }
 
-    public function filter()
+    public static function filter()
     {
-        $filter = $_POST['filter'];
+        $filter = $_POST['cats'];
+        $listaarticulos = ArticuloDAO::getarticulobycat($filter);
+        //$view = 'View/Articulos/articulos.php';
+        //include_once 'main.php';
+        return $listaarticulos;
     }
 }

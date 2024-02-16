@@ -61,7 +61,7 @@
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search" >
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                                         <i class="fas fa-times"></i>
                                     </button>
                                 </div>
@@ -126,8 +126,8 @@
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
             </li-->
-            
-                <?php if ($_GET["action"] == NULL || $_GET["action"] == "list") { ?>
+
+                <?php if ($_GET["action"] == NULL || $_GET["action"] == "list" || $_GET["action"] == "filter") { ?>
 
                     <li class="nav-item">
                         <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -140,14 +140,12 @@
         <?php } ?>
         </nav>
 
-        <?php include_once 'View/interface/filterbar.php'; ?>
-
-
         <?php if (isset($view)) {
             include_once($view);
             // var_dump( $_SESSION["try"]);
         }        ?>
 
+        <?php include_once 'View/interface/filterbar.php'; ?>
         <script src="plugins/jquery/jquery.min.js"></script>
         <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="dist/js/adminlte.min.js?v=3.2.0"></script>

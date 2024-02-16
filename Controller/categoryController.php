@@ -2,12 +2,13 @@
 include_once 'Model/categoryDAO.php';
 class categoryController
 {
-    public function list()
+    public static function list()
     {
         $listacategory = categoryDAO::getALLcategory();
         //include_once 'View/header.php';
-        include_once 'View/Category/catlist.php';
+        //include_once 'View/Category/catlist.php';
         //include_once 'View/footer.php';
+        return  $listacategory;
     }
 
     public function edit()
