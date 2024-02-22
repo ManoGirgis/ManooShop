@@ -7,7 +7,9 @@ class comment
     private $comment;
     private $Rating;
     private $prod_ID;
-    
+    private $date;
+    private $username;
+    private $usrpic;
     public function __construct()
     {
     }
@@ -112,5 +114,29 @@ class comment
         $this->prod_ID = $prod_ID;
 
         return $this;
+    }
+
+    /**
+     * Get the value of date
+     */ 
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Get the value of username
+     */ 
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Get the value of usrpic
+     */ 
+    public function getUsrpic()
+    {
+        return $this->usrpic;
     }
 }

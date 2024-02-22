@@ -79,10 +79,49 @@
 </tr>
 </table>
 </form>
-<!--div class="card-footer card-comments" id="commentCard">
-    <div class="card-comment">
 
-        <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image">
+
+
+</div>
+
+</section>
+
+<div class="card-footer card-comments" id="commentCard">
+    <div class="card-comment">
+        <?php foreach ($listacomments as $comment) { ?>
+            <img class="img-circle img-sm" src="<?= $comment->getUsrpic() ?>" alt="User Image">
+            <div class="comment-text">
+                <span class="username">
+                    <?= $comment->getUsername() ?>
+                    <span class="text-muted float-right">
+                        <?php
+                        /*$date1 = new DateTime(date("Y-m-d h:i:sa"));
+                        $date2 = new DateTime($comment->getUsername());
+                        $interval = $date1->diff($date2);
+                        echo $interval->format('%R%a days, %h hours, %i minutes');*/
+                        /*  if(   $comment->getUsername()  == date("Y/m/d",time())){
+                    echo "ahora";
+                }
+                else if(   $comment->getUsername()  == date("Y/m/d")){
+                    echo "hoy";
+                }
+                else{
+                    echo date("Y/m/d",time()) - $comment->getUsername();  
+                }*/
+
+
+                        ?></span>
+
+                </span>
+                <?= $comment->getComment() ?>
+            </div>
+
+    </div>
+<?php } ?>
+
+</div>
+
+
         <div class="comment-text">
             <span class="username">
                 Maria Gonzales
@@ -91,24 +130,3 @@
             It is a long established fact that a reader will be distracted
             by the readable content of a page when looking at its layout.
         </div>
-
-    </div>
-
-    <div class="card-comment">
-
-        <img class="img-circle img-sm" src="../dist/img/user5-128x128.jpg" alt="User Image">
-        <div class="comment-text">
-            <span class="username">
-                Nora Havisham
-                <span class="text-muted float-right">8:03 PM Today</span>
-            </span>
-            The point of using Lorem Ipsum is that it hrs a morer-less
-            normal distribution of letters, as opposed to using
-            'Content here, content here', making it look like readable English.
-        </div>
-
-    </div>
-
-</div>
-</section>
-</div--->

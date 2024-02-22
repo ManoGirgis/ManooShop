@@ -8,7 +8,7 @@ class commentDAO
     public static function getcomments($idart)
     {
         $con = DataBase::connect();
-        $stmt = $con->prepare("SELECT * FROM comments where prod_ID = ?");
+        $stmt = $con->prepare("SELECT comment,idcomments, id_user,rating, date, prod_id, username,usrpic  FROM manoshop.comments c JOIN manoshop.users u ON (c.id_user = u.idUsers) where prod_ID = ?");
         $stmt->bind_param("i", $idart);
         $stmt->execute();
         $result = $stmt->get_result();
